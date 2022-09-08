@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>
+		
 		<meta name="viewport" content="width=device-width"/>
 		<meta charSet="utf-8"/>
 		<title>Mruz-Pepsin Wedding</title>
@@ -30,11 +32,58 @@
 
 		<link rel="preload" href="assets/css/main.css" as="style"/>
 		<link rel="stylesheet" href="assets/css/main.css" data-n-g=""/>
-
-		
-		<noscript data-n-css=""></noscript>
 	</head>
 	<body>
+		<script>
+		$(document).ready(function(){
+			var button = $('.css-bcsx0a');
+			
+			button.click(function(){
+				if (button.attr("open")) {
+					// It is already open.  Remove attribute and set changes
+					button.removeAttr("open");
+					
+					var span = $('.css-5d390f');
+					var nav = $('.css-10fevb3');
+					
+					const spanElement = document.getElementById("menuSpan");
+					const spanAttrMap = spanElement.attributes;
+					spanAttrMap.removeNamedItem("open");
+					
+					span.addClass("css-17h8xdu").removeClass("css-5d390f");
+
+
+					const navElement = document.getElementById("menuNav");
+					const navAttrMap = navElement.attributes;
+					navAttrMap.removeNamedItem("open");
+					
+					nav.addClass("css-1htxqsx").removeClass("css-10fevb3");
+				} else {
+					// It is not open.  Add attribute and set changes
+					button.attr("open", "true");
+					
+					var span = $('.css-17h8xdu');
+					var nav = $('.css-1htxqsx');
+					
+					const spanElement = document.getElementById("menuSpan");
+					const spanAttrMap = spanElement.attributes;
+					const spanNamedItem = document.createAttribute("open");
+					spanAttrMap.setNamedItem(spanNamedItem);
+					
+					span.addClass("css-5d390f").removeClass("css-17h8xdu");
+
+
+			
+					const navElement = document.getElementById("menuNav");
+					const navAttrMap = navElement.attributes;
+					const navNamedItem = document.createAttribute("open");
+					navAttrMap.setNamedItem(navNamedItem);
+					
+					nav.addClass("css-10fevb3").removeClass("css-1htxqsx");
+				}
+			});
+		});
+		</script>
 		<div id="__next">
 			<div class="css-1oteowz">
 				<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400&amp;family=Source+Serif+Pro:wght@400&amp;display=swap" media="all"/>
@@ -85,8 +134,77 @@
 					<div class="css-1rf9dig">
 						<style data-emotion="css bcsx0a">.css-bcsx0a{background:none;border:none;font-size:10px;height:40px;width:40px;border-radius:3px;}</style>
 						<button class="css-bcsx0a">
-							<style data-emotion="css 17h8xdu">.css-17h8xdu::before,.css-17h8xdu::after{content:'';height:3px;left:20%;margin:0 auto;border-radius:3px;margin-top:-0.15em;position:absolute;top:50%;-webkit-transition:all 0.4s;transition:all 0.4s;width:24px;background:#565458;box-shadow:0 -10px 0 0 #565458,0 10px 0 0 #565458;}</style>
-							<span class="css-17h8xdu"></span>
+							<style data-emotion="css 17h8xdu">
+							.css-17h8xdu::before {
+								content: '';
+								height: 3px;
+								left: 20%;
+								margin: 0 auto;
+								border-radius: 3px;
+								margin-top: -0.15em;
+								position: absolute;
+								top: 50%;
+								-webkit-transition: all 0.4s;
+								transition: all 0.4s;
+								width: 24px;
+								background: #565458;
+								box-shadow: 0 -10px 0 0 #565458,0 10px 0 0 #565458;
+							
+							}
+							</style>
+							<style>
+							.css-17h8xdu::after {
+								content: '';
+								height: 3px;
+								left: 20%;
+								margin: 0 auto;
+								border-radius: 3px;
+								margin-top: -0.15em;
+								position: absolute;
+								top: 50%;
+								-webkit-transition: all 0.4s;
+								transition: all 0.4s;
+								width: 24px;
+								background: #565458;
+								box-shadow: 0 -10px 0 0 #565458,0 10px 0 0 #565458;
+	
+							}
+							</style>
+							
+							<style data-emotion="css 5d390f">
+							.css-5d390f::before {
+								content: "";
+								height: 3px;
+								left: 20%;
+								margin: -0.15em auto 0px;
+								border-radius: 3px;
+								position: absolute;
+								top: 50%;
+								transition: all 0.4s ease 0s;
+								width: 24px;
+								background: rgb(86, 84, 88);
+								box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+								transform: rotateZ(-45deg);
+							}
+							</style>
+							<style>
+							.css-5d390f::after {
+								content:'';
+								height:3px;
+								left: 20%;
+								margin:-0.15em auto 0px;
+								border-radius: 3px;
+								position: absolute;
+								top: 50%;
+								transition: all 0.4s ease 0s;
+								width: 24px;
+								background: rgb(86, 84, 88);
+								box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+								transform: rotateZ(45deg);
+							}
+							</style>
+							
+							<span class="css-17h8xdu" id="menuSpan"></span>
 							<style data-emotion="css 1wkn33">.css-1wkn33{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;}</style>
 							<span class="css-1wkn33">Menu Button</span>
 						</button>
@@ -96,8 +214,37 @@
 						<style data-emotion="css temgju">.css-temgju{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;height:56px;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;width:100%;font-family:Source Serif Pro;color:#565458;font-size:32px;font-weight:400;text-transform:uppercase;letter-spacing:5px;}@media (max-width: 640px){.css-temgju{font-size:calc(32px * 0.75);}}</style>
 						<h2 class="css-temgju">Hotels &amp; Parking</h2>
 					</div>
-					<style data-emotion="css 1htxqsx">.css-1htxqsx{left:0;overflow:hidden;position:fixed;top:0;-webkit-transition:all 0.5s;transition:all 0.5s;width:100%;z-index:18;background-color:#ffffff;height:0;}@media (min-width: 768px){.css-1htxqsx{display:none;}}</style>
-					<nav role="navigation" class="css-1htxqsx">
+					
+					<style data-emotion="css 1htxqsx">
+					.css-1htxqsx {
+						left: 0;
+						overflow: hidden;
+						position: fixed;
+						top: 0;
+						-webkit-transition: all 0.5s;
+						transition: all 0.5s;
+						width: 100%;
+						z-index: 18;
+						background-color: #ffffff;
+						height: 0;
+					}
+					</style>
+					
+					<style data-emotion="css 10fevb3">
+					.css-10fevb3 {
+						left: 0px;
+						overflow: hidden;
+						position: fixed;
+						top: 0px;
+						transition: all 0.5s ease 0s;
+						width: 100%;
+						z-index: 18;
+						background-color: rgb(255, 255, 255);
+						height: 100%;
+					}
+					</style>
+					
+					<nav role="navigation" class="css-1htxqsx" id="menuNav">
 						<style data-emotion="css nfosgx">.css-nfosgx{padding-top:56px;height:100vh;overflow-y:auto;}</style>
 						<div class="css-nfosgx">
 							<style data-emotion="css kxffhl">.css-kxffhl{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;list-style:none;margin:0;padding:0;}</style>
